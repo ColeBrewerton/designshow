@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 341 Web template by Nikkaella Lulu, 2024 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Of Waikato Design Show - Contact</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sge0bpt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/blob3.png">
+    <script src="cursor.js" defer></script>
+
+    <!-- Javascript for the responsive topnav -->
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
+</head>
+<body>
+    <!-- Responsive Top Nav -->
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="students.html">Students</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+        <!-- Main body, uses CSS grid, can have more nested divs -->
+    <div class="grid-container">
+        <!-- CSS Grid Side Nav -->
+        <!-- <div id="mySidenav" class="sidenav">
+            <a href="index.html">Home</a>
+            <a href="students.html">Students</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div> -->
+        
+        <!-- Main content from here downwards -->
+        <div class="grid-header">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="images/pulseVideo.mp4" type="video/mp4">
+            </video>
+            <h1 class="header-h1">Contact Us</h1>
+        </div>
+
+
+        <div class="transition-blobs">
+            <img src="images/transitionblobs.png" alt="transition blobs">
+        </div>
+        
+        <div class="grid-body">
+            <div class="text-card"> 
+            <h2>Get in touch</h2>
+            <p>Whether you are a prospective student looking to study, or you are in industry and would like to collaborate with us, or you just want to have a chat!</p>
+            <p>We'd love to hear from you!</p> 
+
+            <div class="contact-info">
+                <p>Email: <strong>degreeshow@waikato.ac.nz</strong></p>
+                <p>Faculty Phone: <strong>0800 924 538</strong></p>
+                <p>Degree info: <strong>www.waikato.ac.nz/go/bdes</strong></p>
+            </div>
+            </div>
+        </div>
+        
+        <div class="grid-footer">
+
+            <div class="footer-blobs">
+                <img src="images/footer2.png" alt="footer background blobs">
+            </div>
+
+            <div class="footer-content">
+                <a href="contact.html" class="footer-btn">Contact</a>
+                <a href="students.html" class="footer-btn">Students</a>
+                <a href="projects.html" class="footer-btn">Projects</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

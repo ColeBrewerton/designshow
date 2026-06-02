@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 341 Web template by Nikkaella Lulu, 2024 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>University Of Waikato Design Show - Students</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sge0bpt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/blob2.png">
+    <script src="cursor.js" defer></script>
+
+    <!-- Javascript for the responsive topnav -->
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+</head>
+<body>
+    <!-- Responsive Top Nav -->
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="students.html" class="active">Students</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+        <!-- Main body, uses CSS grid, can have more nested divs -->
+    <div class="grid-container">
+        <!-- CSS Grid Side Nav -->
+        <!-- <div id="mySidenav" class="sidenav">
+            <a href="index.html">Home</a>
+            <a href="students.html" class="active">Students</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div> -->
+        
+        <!-- Main content from here downwards -->
+        <div class="grid-header">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="images/pulseVideo.mp4" type="video/mp4">
+            </video>
+            <h1 class="header-h1">Students</h1>
+        </div>
+        
+        <div class="transition-blobs">
+            <img src="images/transitionblobs.png" alt="transition blobs">
+        </div>
+
+        <div class="grid-body">
+
+            <div class="text-card"> 
+
+                <div class="flex-student-rows">
+
+                    <div class="flex-student">
+                        <a href="nyla.html" class="student-image">
+                            <img src="images/nylaPerson1.png" class="student-front" alt="Nyla Ray">
+                            <img src="images/nylaPerson2.png" class="student-back" alt="Nyla Ray">
+                        </a>
+                        <h3>Nyla Ray</h3>
+                    </div>
+
+                    <div class="flex-student">
+                            <a class="student-image">
+                                <img src="images/2Person1.png" class="student-front" alt="Cole Brewerton">
+                                <img src="images/2Person2.png" class="student-back" alt="Cole Brewerton">
+                            </a>
+                            <h3>Cole Brewerton</h3>
+                        </div>
+
+                        <div class="flex-student">
+                            <a class="student-image">
+                                <img src="images/3Person1.png" class="student-front" alt="Ellie Williams">
+                                <img src="images/3Person2.png" class="student-back" alt="Ellie Williams">
+                            </a>
+                            <h3>Ellie Williams</h3>
+                        </div>
+
+                        <div class="flex-student">
+                            <a class="student-image">
+                                <img src="images/4Person1.png" class="student-front" alt="Lily Bracegirdle">
+                                <img src="images/4Person2.png" class="student-back" alt="Lily Bracegirdle">
+                            </a>
+                            <h3>Lily Bracegirdle</h3>
+                        </div>
+
+                        <div class="flex-student">
+                            <a class="student-image">
+                                <img src="images/5person1.png" class="student-front" alt="Hannah Barlow">
+                                <img src="images/5person2.png" class="student-back" alt="Hannah Barlow">
+                            </a>
+                            <h3>Hannah Barlow</h3>
+                        </div>
+
+                        <div class="flex-student">
+                            <a class="student-image">
+                                <img src="images/6person1.png" class="student-front" alt="Aeryn Mckay">
+                                <img src="images/6person2.png" class="student-back" alt="Aeryn Mckay">
+                            </a>
+                            <h3>Aeryn Mckay</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-footer">
+
+                <div class="footer-blobs">
+                    <img src="images/footer2.png" alt="footer background blobs">
+                </div>
+
+                <div class="footer-content">
+                    <a href="contact.html" class="footer-btn">Contact</a>
+                    <a href="students.html" class="footer-btn">Students</a>
+                    <a href="projects.html" class="footer-btn">Projects</a>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

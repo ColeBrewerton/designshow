@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 341 Web template by Nikkaella Lulu, 2024 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>University Of Waikato Design Show - Student 1</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sge0bpt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/blob2.png">
+    <script src="cursor.js" defer></script>
+
+    <!-- Javascript for the responsive topnav -->
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
+</head>
+<body>
+    <!-- Responsive Top Nav -->
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="students.html" class="active">Students</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+        <!-- Main body, uses CSS grid, can have more nested divs -->
+    <div class="grid-container">
+        <!-- CSS Grid Side Nav -->
+        <!-- <div id="mySidenav" class="sidenav">
+            <a href="index.html">Home</a>
+            <a href="students.html" class="active">Students</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div> -->
+        
+        <!-- Main content from here downwards -->
+        <div class="grid-header">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="images/pulseVideo.mp4" type="video/mp4">
+            </video>
+            <h1 class="header-h1">Nyla Ray</h1>
+        </div>
+        
+        <div class="transition-blobs">
+            <img src="images/transitionblobsStudent.png" alt="transition blobs">
+        </div>
+
+        <div class="grid-body">
+            <div class="text-card"> 
+                <h2>About Me</h2>
+                <br>
+                <h3>Bachelor Of Design, Majoring in Communication + Media Design</h3>
+                <br>
+
+                <p>Hellooooᯓ☆ I’m Nyla! I’m a passionate designer with a love for motion and illustration. Growing up, I was always creating characters, and now I’m constantly inspired by artists and designers who build entire worlds through their work. <br> <br> Through my studies, I’ve enjoyed combining illustration with motion to create designs that feel fun, dynamic, and engaging. Seeing all the possibilities in After Effects has been especially exciting. It’s amazing how exploring the technical side of animation and small details can completely transform a design. I’m continuing to grow my skills in motion design and illustration, and I’m excited to keep experimenting, learning, and creating work that pushes my skills and connects with people in meaningful ways.</p>
+            </div>
+            <div class="text-card text-card2"> 
+                <section id="project-hail-mary">    
+                    <h2>Project Hail Mary</h2>
+                    <div class="carousel-wrapper">
+
+                        <div class="carousel" id="projectCarousel">
+                            <img src="images/project1.jpg" alt="">
+                            <img src="images/project2.jpg" alt="">
+                            <img src="images/project3.jpg" alt="">
+                            <img src="images/project4.webp" alt="">
+                            <img src="images/project5.webp" alt="">
+                        </div>
+
+                        <!-- custom slider bar -->
+                        <div class="carousel-track">
+                            <div class="carousel-thumb" id="carouselThumb"></div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <p>This project explores Project Hail Mary as a narrative foundation for motion design, translating its core themes of isolation, problem-solving, and interstellar survival into a series of animated sequences and moving posters. It visualises key ideas from the story such as scientific discovery, communication beyond language, and the urgency of saving Earth through a lone astronaut’s journey in deep space. <br> <br> The animations use visual metaphors like expanding star fields, shifting molecular structures, and fragmented memory-like sequences to represent the protagonist’s gradual understanding of his mission. Lighting, scale, and motion are used to contrast the vast emptiness of space with moments of clarity and human connection, especially through the evolving relationship with an alien intelligence. <br> <br>The project aims to make the scientific and emotional depth of Project Hail Mary more accessible and engaging through design. By combining cinematic motion, abstract data visualisation, and narrative-driven visuals, it turns the story’s ideas about resilience, collaboration, and discovery into a visual experience that feels immersive and thought-provoking.</p>
+                </section>
+            </div>
+        </div>
+        
+        <div class="grid-footer">
+
+            <div class="footer-blobs">
+                <img src="images/footer2.png" alt="footer background blobs">
+            </div>
+
+            <div class="footer-content">
+                <a href="contact.html" class="footer-btn">Contact</a>
+                <a href="students.html" class="footer-btn">Students</a>
+                <a href="projects.html" class="footer-btn">Projects</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

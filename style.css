@@ -1,0 +1,726 @@
+/* ---------- Base ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.05em;
+    cursor: none !important;
+}
+
+p, li, span, a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    line-height: 1.7;
+    font-size: 1.3em;
+}
+
+h1, h2 {
+    font-family: "alphabet-soup-pro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    text-align: left;
+    letter-spacing: 0.05em;
+}
+
+h3 {
+    font-family: "alphabet-soup-pro", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+body {
+    margin: 0;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Blurred background overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('images/Pulse Background.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(18px);
+    transform: scale(1.1);
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.topnav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+    padding: 0.5rem 1.5rem;
+}
+
+.topnav a {
+    font-family: "alphabet-soup-pro", sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+}
+
+.topnav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.topnav a.active {
+    background: white;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.topnav .icon {
+    display: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.6rem 0.8rem;
+}
+
+
+/* ============================================================
+   GRID LAYOUT
+   ============================================================ */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(1fr, auto);
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.grid-header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+
+    background-image: url('images/Pulse Background.png');
+    background-size: cover;
+    background-position: center;
+
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header-h1 {
+    font-size: 18vw; /* starting point (JS will adjust) */
+    margin: 0;
+    color: white;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 3;
+    transform: translateY(-8vh);
+    white-space: nowrap;
+
+    text-align: center;
+    width: 90%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+
+    line-height: 0.9;
+}
+
+/* Transition blobs — same grid rows as hero, pinned to bottom */
+.transition-blobs {
+    grid-column: 1 / -1;
+    grid-row: 1 / 3;
+    align-self: end;
+    margin-bottom: -15%;
+
+    width: 110%;
+    min-width: 600px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 10;
+    pointer-events: none;
+}
+
+.transition-blobs img {
+    width: 100%;
+    display: block;
+}
+
+
+/* ============================================================
+   BODY CONTENT
+   ============================================================ */
+.grid-body {
+    grid-column: 3 / 11;
+    grid-row: 3 / 8;
+    padding: 5rem 5% 5rem;
+    text-align: left;
+}
+
+.grid-body p:last-child {
+    margin-bottom: 0;
+}
+
+.grid-body h2 {
+    font-size: clamp(2rem, 4vw, 5rem);
+    margin-bottom: 1rem;
+}
+
+.text-card {
+    margin-top: 30%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 4rem;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.grid-footer {
+    grid-column: 1 / -1;
+    grid-row: 8 / 12;
+    padding: 15%;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+}
+
+.footer-blobs {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.footer-blobs img {
+    width: 100%;
+    display: block;
+    min-width: 600px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.footer-content {
+    position: absolute;
+    z-index: 2;
+    bottom: 3vw;
+    left: 11vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5vw;
+}
+
+.footer-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-family: "alphabet-soup-pro", sans-serif;
+    font-size: 0.8vw;
+    width: 20vw;
+    padding: 0.5vw 0vw;
+    border-radius: 100px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.footer-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* ============================================================
+   STUDENTS PAGE
+   ============================================================ */
+.placeholder-student {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.flex-student-rows {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex-student {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin-top: 3%;
+    width: 32%;
+}
+
+
+/* ============================================================
+   PROJECTS PAGE
+   ============================================================ */
+.placeholder-img {
+    width: 95%;
+    height: 70%;
+
+    object-fit: contain;   /* no cropping */
+    display: block;
+
+}
+.flex-project-rows {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.flex-project {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 50%;
+    margin-bottom: 3%;
+
+    /* 🔥 add this */
+    aspect-ratio: 4 / 3;
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-info {
+    margin-top: 5%;
+}
+
+
+/* ============================================================
+   HERO VIDEO
+   ============================================================ */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+/* ============================================================
+   BLOB CURSOR
+   ============================================================ */
+.cursor-blob {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: -15px;
+    margin-left: -15px;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        inset 0 0 12px rgba(255, 255, 255, 0.15),
+        0 4px 24px rgba(255, 255, 255, 0.08);
+
+    animation: blobMorph 3.5s ease-in-out infinite;
+
+    pointer-events: none;
+    z-index: 99999;
+    will-change: transform;
+
+    transition:
+        width       0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        height      0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        margin-top  0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        margin-left 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        background  0.3s ease,
+        opacity     0.3s ease;
+}
+
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: -4px;
+    margin-left: -4px;
+
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+
+    pointer-events: none;
+    z-index: 100000;
+    will-change: transform;
+
+    transition: opacity 0.3s ease;
+}
+
+.cursor-blob--hover {
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.85);
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.2),
+        0 6px 32px rgba(255, 255, 255, 0.12);
+}
+
+.cursor-dot--hover {
+    opacity: 0;
+}
+
+.cursor-blob--click {
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    margin-left: -24px;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+@keyframes blobMorph {
+    0%   { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+    25%  { border-radius: 58% 42% 55% 45% / 45% 60% 40% 55%; }
+    50%  { border-radius: 42% 58% 45% 55% / 60% 38% 62% 40%; }
+    75%  { border-radius: 55% 45% 60% 40% / 42% 55% 45% 58%; }
+    100% { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .cursor-blob,
+    .cursor-dot { display: none; }
+}
+
+
+/* ============================================================
+   RESPONSIVE — TABLET (max 992px)
+   ============================================================ */
+@media screen and (max-width: 992px) {
+    .grid-header {
+        height: 80vh;
+    }
+
+    .transition-blobs {
+        width: 180%;
+        max-width: none;
+        min-width: 0;
+        margin-bottom: -30%;
+    }
+
+    .text-card {
+    margin-top: 50%;
+    }
+
+    /* Students → 2 per row */
+    .flex-student {
+        width: 48%;
+    }
+
+    /* Projects → 1 per row */
+    .flex-project {
+        width: 100%;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max 600px)
+   ============================================================ */
+@media screen and (max-width: 600px) {
+
+    /* Nav: collapsed pill */
+    .topnav {
+        top: 10px;
+        width: calc(100% - 24px);
+        padding: 0.4rem 0.6rem;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .topnav a:not(.active):not(.icon) {
+        display: none;
+    }
+
+    .topnav .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Nav: expanded */
+    .topnav.responsive {
+        border-radius: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem;
+        gap: 0.2rem;
+        width: calc(100% - 24px);
+    }
+
+    .topnav.responsive a {
+        display: block !important;
+        text-align: center;
+        border-radius: 12px;
+        font-size: 1.2rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .topnav.responsive .icon {
+        display: flex !important;
+        align-self: flex-end;
+    }
+
+    /* Hero */
+    .grid-header {
+        height: 50vh;
+    }
+
+    .header-h1 {
+        font-size: clamp(2.5rem, 15vw, 6rem);
+        transform: translateY(-4vh);
+    }
+
+    /* Blobs */
+    .transition-blobs {
+        width: 220%;
+        max-width: none;
+        min-width: 0;
+        margin-bottom: -30%;
+    }
+
+    /* Content */
+    .grid-body {
+        grid-column: 1 / -1;
+        padding: 3rem 6% 4rem;
+    }
+
+
+    .text-card {
+        margin-top: 40%;
+    }
+
+    /* Footer */
+    .grid-footer {
+        padding: 0;
+        min-height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-blobs img {
+        content: url("images/footerMobile.png");
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .footer-content {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        gap: 0.25rem;
+        width: auto;
+    }
+
+    .footer-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16rem;
+        padding: 0.25rem 0;
+        font-size: 0.75rem;
+        border-radius: 16px;
+        white-space: nowrap;
+    }
+
+    /* Students */
+    .flex-student-rows {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex-student {
+        width: 70%;
+    }
+
+    /* Projects */
+    .flex-project-rows {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex-project {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+.header-h1 {
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block;
+  transform: translateY(-4vh);
+}
+
+.header-h1:hover {
+  transform: scale(1.1);
+  transform: translateY(-4vh);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+               0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+
+
+.carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel img {
+    flex: 0 0 auto;
+    width: 60%;
+    max-width: 500px;
+    border-radius: 20px;
+    scroll-snap-align: center;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+    transform: scale(1.01);
+}
+
+/* optional: hide scrollbar */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.carousel-thumb {
+    height: 100%;
+    width: 25%; /* default (will be controlled by JS) */
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 100px;
+    transition: width 0.1s linear;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.text-card2 {
+    margin-top: 5%;
+}
+
+
+/* Student image swap on hover */
+.student-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+
+    /* consistent container size */
+    aspect-ratio: 1 / 1;
+}
+
+.student-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;   /* 🔥 key change: no cropping */
+    transition: opacity 0.4s ease;
+}
+
+.student-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.student-image:hover .student-back {
+    opacity: 1;
+}
+
+.student-image:hover .student-front {
+    opacity: 0;
+}
+
+.flex-student h3 {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.flex-project h3 {
+    margin-top: 1rem;
+}
