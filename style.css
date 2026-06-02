@@ -737,4 +737,5 @@ html {
 
 .flex-project h3 {
     margin-top: 1rem;
+    text-wrap: balance;
 }
