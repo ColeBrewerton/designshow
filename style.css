@@ -92,7 +92,7 @@ body::before {
 
 .topnav a.active {
     background: white;
-    color: #1a1a1a;
+    color: #f05927;
     font-weight: 600;
 }
 
