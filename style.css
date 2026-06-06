@@ -579,7 +579,7 @@ body::before {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 16rem;
+        width: 50vw;
         padding: 0.25rem 0;
         font-size: 0.75rem;
         border-radius: 16px;
