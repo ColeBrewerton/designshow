@@ -547,6 +547,7 @@ body::before {
 
     .text-card {
         margin-top: 40%;
+        padding: 2.5rem;
     }
 
     /* Footer */
