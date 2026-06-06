@@ -37,11 +37,16 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
 /* Blurred background overlay */
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
+    inset: -50px;
     background-image: url('images/Pulse Background.png');
     background-size: cover;
     background-position: center;
